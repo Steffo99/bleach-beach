@@ -5,8 +5,8 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour {
 
     public Rigidbody2D rb;
-    public float horizontalShipSpeed = 35;
-    public float verticalShipSpeed = 10;
+    public float horizontalShipSpeed = 50;
+    public float verticalShipSpeed = 20;
 
     void Start () {
         rb = GetComponent<Rigidbody2D>();
@@ -16,16 +16,30 @@ public class PlayerMovement : MonoBehaviour {
         if (Input.GetKey(KeyCode.LeftArrow))
         {
             transform.localScale = new Vector3(-1, 1, 1);
-            rb.AddForce(Vector2.left * horizontalShipSpeed);
+            if(Input.GetKey(KeyCode.RightShift))
+            { 
+                rb.AddTorque(horizontalShipSpeed);
+            }
+            else
+            {
+                rb.AddForce(Vector2.right * -horizontalShipSpeed);
+            }
         }
         if (Input.GetKey(KeyCode.RightArrow))
         {
             transform.localScale = new Vector3(1, 1, 1);
-            rb.AddForce(Vector2.right * horizontalShipSpeed);
+            if (Input.GetKey(KeyCode.RightShift))
+            {
+                rb.AddTorque(-horizontalShipSpeed);
+            }
+            else
+            {
+                rb.AddForce(Vector2.right * horizontalShipSpeed);
+            }
         }
         if (Input.GetKey(KeyCode.UpArrow))
         {
-            rb.AddForce(Vector2.up * verticalShipSpeed);
+            rb.AddForce(transform.up * verticalShipSpeed);
         }
     }
 }
