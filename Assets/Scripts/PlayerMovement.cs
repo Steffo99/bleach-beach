@@ -8,9 +8,13 @@ public class PlayerMovement : MonoBehaviour {
     public GameObject hull;
     public float horizontalShipSpeed = 50;
     public float verticalShipSpeed = 20;
+    public float maxJetFuel = 2f;
+    public float jetFuelRechargeSpeed = 0.5f;
+    private float jetFuel;
 
     void Start () {
         rb = GetComponent<Rigidbody2D>();
+        jetFuel = maxJetFuel;
 	}
 	
 	void FixedUpdate () {
@@ -24,9 +28,14 @@ public class PlayerMovement : MonoBehaviour {
             hull.transform.localScale = new Vector3(1, 1, 1);
             rb.AddForce(Vector2.right * horizontalShipSpeed);
         }
-        if (Input.GetKey(KeyCode.UpArrow))
+        if (Input.GetKey(KeyCode.UpArrow) && jetFuel > 0f)
         {
+            jetFuel = Mathf.Clamp(jetFuel - Time.deltaTime, 0, maxJetFuel);
             rb.AddForce(Vector2.up * verticalShipSpeed);
+        }
+        else if(!Input.GetKey(KeyCode.UpArrow))
+        {
+            jetFuel = Mathf.Clamp(jetFuel + Time.deltaTime, 0, maxJetFuel);
         }
     }
 }
