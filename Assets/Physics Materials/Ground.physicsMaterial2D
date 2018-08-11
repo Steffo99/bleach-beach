@@ -6,5 +6,5 @@ PhysicsMaterial2D:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: Ground
-  friction: 1000
+  friction: 100000
   bounciness: 0
