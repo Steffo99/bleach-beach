@@ -17,7 +17,8 @@ public class FishSpawner : MonoBehaviour {
         timeToSpawn -= Time.deltaTime;
         if(timeToSpawn <= 0)
         {
-            Instantiate(fish);
+            GameObject newFish = Instantiate(fish);
+            newFish.transform.position = transform.position;
             timeToSpawn = Random.Range(spawnTime - randomFactor, spawnTime + randomFactor);
         }
 	}

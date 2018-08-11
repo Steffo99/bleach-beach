@@ -127,11 +127,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4279439219186522, guid: 1cf703958a669d942a42326499701367, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -4.126
+      value: -3.37
       objectReference: {fileID: 0}
     - target: {fileID: 4279439219186522, guid: 1cf703958a669d942a42326499701367, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 36.531
+      value: 50.53
       objectReference: {fileID: 0}
     - target: {fileID: 4279439219186522, guid: 1cf703958a669d942a42326499701367, type: 2}
       propertyPath: m_LocalPosition.z
@@ -156,6 +156,31 @@ Prefab:
     - target: {fileID: 4279439219186522, guid: 1cf703958a669d942a42326499701367, type: 2}
       propertyPath: m_RootOrder
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4419769467158982, guid: 1cf703958a669d942a42326499701367, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4419769467158982, guid: 1cf703958a669d942a42326499701367, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4419769467158982, guid: 1cf703958a669d942a42326499701367, type: 2}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4967707696773828, guid: 1cf703958a669d942a42326499701367, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0.163
+      objectReference: {fileID: 0}
+    - target: {fileID: 4967707696773828, guid: 1cf703958a669d942a42326499701367, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0.114
+      objectReference: {fileID: 0}
+    - target: {fileID: 50107883579770240, guid: 1cf703958a669d942a42326499701367,
+        type: 2}
+      propertyPath: m_Constraints
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1cf703958a669d942a42326499701367, type: 2}
@@ -208,6 +233,16 @@ Prefab:
         type: 2}
       propertyPath: orthographic size
       value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 20610604938940038, guid: acb6270a21e7fa744878210a4df90d27,
+        type: 2}
+      propertyPath: m_projectionMatrixMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 20610604938940038, guid: acb6270a21e7fa744878210a4df90d27,
+        type: 2}
+      propertyPath: field of view
+      value: 150
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: acb6270a21e7fa744878210a4df90d27, type: 2}

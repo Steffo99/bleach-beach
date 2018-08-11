@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour {
 
-    public Rigidbody2D rb;
+    private Rigidbody2D rb;
+    public GameObject hull;
     public float horizontalShipSpeed = 50;
     public float verticalShipSpeed = 20;
 
@@ -15,31 +16,17 @@ public class PlayerMovement : MonoBehaviour {
 	void FixedUpdate () {
         if (Input.GetKey(KeyCode.LeftArrow))
         {
-            transform.localScale = new Vector3(-1, 1, 1);
-            if(Input.GetKey(KeyCode.RightShift))
-            { 
-                rb.AddTorque(horizontalShipSpeed);
-            }
-            else
-            {
-                rb.AddForce(Vector2.right * -horizontalShipSpeed);
-            }
+            hull.transform.localScale = new Vector3(-1, 1, 1);
+            rb.AddForce(Vector2.right * -horizontalShipSpeed);
         }
         if (Input.GetKey(KeyCode.RightArrow))
         {
-            transform.localScale = new Vector3(1, 1, 1);
-            if (Input.GetKey(KeyCode.RightShift))
-            {
-                rb.AddTorque(-horizontalShipSpeed);
-            }
-            else
-            {
-                rb.AddForce(Vector2.right * horizontalShipSpeed);
-            }
+            hull.transform.localScale = new Vector3(1, 1, 1);
+            rb.AddForce(Vector2.right * horizontalShipSpeed);
         }
         if (Input.GetKey(KeyCode.UpArrow))
         {
-            rb.AddForce(transform.up * verticalShipSpeed);
+            rb.AddForce(Vector2.up * verticalShipSpeed);
         }
     }
 }
