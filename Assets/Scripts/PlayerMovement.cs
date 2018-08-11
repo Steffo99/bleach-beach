@@ -15,10 +15,12 @@ public class PlayerMovement : MonoBehaviour {
 	void FixedUpdate () {
         if (Input.GetKey(KeyCode.LeftArrow))
         {
+            transform.localScale = new Vector3(-1, 1, 1);
             rigidbody.AddForce(Vector2.left * horizontalShipSpeed);
         }
         if (Input.GetKey(KeyCode.RightArrow))
         {
+            transform.localScale = new Vector3(1, 1, 1);
             rigidbody.AddForce(Vector2.right * horizontalShipSpeed);
         }
         if (Input.GetKey(KeyCode.UpArrow))
