@@ -5,8 +5,14 @@ using UnityEngine;
 public class FollowGameObject : MonoBehaviour {
 
     public GameObject target;
+    public Vector2 limitFirstCorner;
+    public Vector2 limitSecondCorner;
     
-	void Update () {
-        transform.position = new Vector3(target.transform.position.x, target.transform.position.y, -1f);
+    void Update () {
+        transform.position = new Vector3(
+            Mathf.Clamp(target.transform.position.x, limitFirstCorner.x, limitSecondCorner.x),
+            Mathf.Clamp(target.transform.position.y, limitFirstCorner.y, limitSecondCorner.y),
+            -1f
+        );
 	}
 }
