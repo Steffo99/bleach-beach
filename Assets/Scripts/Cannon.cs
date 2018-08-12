@@ -27,11 +27,11 @@ public class Cannon : MonoBehaviour {
         spriteRenderer.flipX = direction.x < 0;
         if (harpoonAvailable)
         {
-            if (Input.GetKey(KeyCode.Space))
+            if (Input.GetMouseButton(0))
             {
                 force = Mathf.Clamp(force + forceBuildingSpeed * Time.deltaTime, 0, maxForce);
             }
-            if (Input.GetKeyUp(KeyCode.Space))
+            if (Input.GetMouseButtonUp(0))
             {
                 GameObject harpoonInstance = Instantiate(harpoon);
                 harpoonInstance.transform.position = transform.position + (Vector3)direction.normalized;

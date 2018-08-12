@@ -34,7 +34,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1634593922401586}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.136495, y: 33.203545, z: 1.2109375}
+  m_LocalPosition: {x: 10.24, y: 27.43, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -51,7 +51,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 638828a10228a7c4abdc105ea02613b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnTime: 5
-  randomFactor: 1
+  spawnTime: 1
+  randomFactor: 0.2
   fish: {fileID: 1615301965237016, guid: 3b07c51a898a8e342b3d0236ca47bf8c, type: 2}
-  sea: {fileID: 1259758189242624, guid: 4dc0408b236da9847b1c799161bbd70a, type: 2}
+  sea: {fileID: 0}

@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class FishSpawner : MonoBehaviour {
 
-    public float spawnTime = 5;
-    public float randomFactor = 1;
+    public float spawnTime = 5f;
+    public float randomFactor = 1f;
     public GameObject fish;
     public GameObject sea;
     private float timeToSpawn;
@@ -20,6 +20,7 @@ public class FishSpawner : MonoBehaviour {
         {
             GameObject newFish = Instantiate(fish);
             newFish.transform.position = transform.position;
+            newFish.GetComponent<FishAi>().sea = sea;
             timeToSpawn = Random.Range(spawnTime - randomFactor, spawnTime + randomFactor);
         }
         if(transform.position.y > sea.transform.position.y)
