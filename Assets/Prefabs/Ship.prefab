@@ -101,7 +101,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1506768218425990}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 13.64, y: 40.63, z: 0}
+  m_LocalPosition: {x: 4.27, y: 42.06, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4419769467158982}
@@ -238,7 +238,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hull: {fileID: 1396569450907664}
   horizontalShipSpeed: 5
-  verticalShipSpeed: 24
+  verticalShipSpeed: 30
   maxJetFuel: 2
   jetFuelRechargeSpeed: 0.1
 --- !u!114 &114971120113848216
@@ -252,7 +252,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7bc860ed21bbef247869c07bd6fef82f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationSpeed: 90
+  harpoonAvailable: 1
+  harpoon: {fileID: 1737609814504882, guid: 288f16ae5eaa16440b89da431723b1c2, type: 2}
+  force: 1000
 --- !u!120 &120914689644947078
 LineRenderer:
   m_ObjectHideFlags: 1

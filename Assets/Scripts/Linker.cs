@@ -14,7 +14,10 @@ public class Linker : MonoBehaviour
     }
 
     void Update () {
-        lineRenderer.SetPosition(0, firstObject.transform.position);
-        lineRenderer.SetPosition(1, secondObject.transform.position);
+        if (firstObject != null && secondObject != null)
+        {
+            lineRenderer.SetPosition(0, firstObject.transform.position);
+            lineRenderer.SetPosition(1, secondObject.transform.position);
+        }
     }
 }
