@@ -3,7 +3,8 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Fish
   layers:
   - Default
   - TransparentFX
@@ -38,6 +39,9 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Particles
+    uniqueID: 3614082125
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
@@ -46,4 +50,7 @@ TagManager:
     locked: 0
   - name: Cannon
     uniqueID: 2724917297
+    locked: 0
+  - name: Fade
+    uniqueID: 785011415
     locked: 0

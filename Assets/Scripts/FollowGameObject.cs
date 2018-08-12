@@ -9,10 +9,13 @@ public class FollowGameObject : MonoBehaviour {
     public Vector2 limitSecondCorner;
     
     void Update () {
-        transform.position = new Vector3(
-            Mathf.Clamp(target.transform.position.x, limitFirstCorner.x, limitSecondCorner.x),
-            Mathf.Clamp(target.transform.position.y, limitFirstCorner.y, limitSecondCorner.y),
-            -1f
-        );
+        if (target != null)
+        {
+            transform.position = new Vector3(
+                Mathf.Clamp(target.transform.position.x, limitFirstCorner.x, limitSecondCorner.x),
+                Mathf.Clamp(target.transform.position.y, limitFirstCorner.y, limitSecondCorner.y),
+                -1f
+            );
+        }
 	}
 }
