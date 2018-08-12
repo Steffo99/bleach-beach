@@ -9,10 +9,10 @@ public class FishAi : MonoBehaviour {
     public GameObject hook = null;
     public GameObject sea;
     private Vector3 direction;
-    private Rigidbody2D rigidbody2D;
+    private Rigidbody2D rb;
 
 	void Start () {
-        rigidbody2D = GetComponent<Rigidbody2D>();
+        rb = GetComponent<Rigidbody2D>();
         InvokeRepeating("ChangeDirection", 0, timeBetweenDirectionChanges);
 	}
 
@@ -28,11 +28,11 @@ public class FishAi : MonoBehaviour {
             {
                 direction = new Vector3(Random.Range(-1f, 1f), Random.Range(-4f, -2f));
             }
-            rigidbody2D.MovePosition(transform.position + direction * Time.deltaTime * speed);
+            rb.MovePosition(transform.position + direction * Time.deltaTime * speed);
         }
         else
         {
-            rigidbody2D.MovePosition(hook.transform.position);
+            rb.MovePosition(hook.transform.position);
         }
     }
 

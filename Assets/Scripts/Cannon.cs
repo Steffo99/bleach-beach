@@ -6,15 +6,18 @@ public class Cannon : MonoBehaviour {
     
     public bool harpoonAvailable = true;
     public GameObject harpoon;
+    public GameObject hull;
     public float maxForce = 5f;
     public float forceBuildingSpeed = 2f;
     public float startingForce = 1f;
     private float force = 1f;
-    
+
+    private SpriteRenderer hullSpriteRenderer;
     private SpriteRenderer spriteRenderer;
 
     private void Start()
     {
+        hullSpriteRenderer = hull.GetComponent<SpriteRenderer>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         Physics2D.IgnoreLayerCollision(8, 8);
     }
@@ -24,7 +27,7 @@ public class Cannon : MonoBehaviour {
         Vector2 screenPosition = Camera.main.WorldToScreenPoint(transform.position);
         Vector2 direction = (Vector2)Input.mousePosition - screenPosition;
         transform.rotation = Quaternion.LookRotation(Vector3.forward, direction);
-        spriteRenderer.flipX = direction.x < 0;
+        spriteRenderer.flipX = !((direction.x < 0) ^ (hull.transform.localScale.x > 0));
         if (harpoonAvailable)
         {
             if (Input.GetMouseButton(0))

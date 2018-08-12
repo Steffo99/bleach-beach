@@ -19,7 +19,7 @@ public class GameStarter : MonoBehaviour {
     {
         if (animator.GetBool("Finished"))
         {
-            SceneManager.LoadScene("Game");
+            SceneManager.LoadSceneAsync("Game", LoadSceneMode.Single);
         }
     }
 
