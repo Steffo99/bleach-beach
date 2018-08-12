@@ -14,6 +14,7 @@ public class Harpoon : MonoBehaviour {
     {
         rigidbody2D = GetComponent<Rigidbody2D>();
         linker = GetComponentInChildren<Linker>();
+        rigidbody2D.useFullKinematicContacts = true;
     }
 
     void Update ()
@@ -45,7 +46,15 @@ public class Harpoon : MonoBehaviour {
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        going = false;
-        rigidbody2D.bodyType = RigidbodyType2D.Kinematic;
+        if (going)
+        {
+            going = false;
+            rigidbody2D.bodyType = RigidbodyType2D.Kinematic;
+        }
+        if (collision.gameObject.tag == "Fish")
+        {
+            collision.gameObject.GetComponent<FishAi>().hook = gameObject;
+        }
+
     }
 }

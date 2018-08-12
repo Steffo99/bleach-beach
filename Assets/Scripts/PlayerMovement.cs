@@ -18,22 +18,25 @@ public class PlayerMovement : MonoBehaviour {
 	}
 	
 	void FixedUpdate () {
-        if (Input.GetKey(KeyCode.LeftArrow))
+        if (Input.GetAxis("Horizontal") < 0)
         {
             hull.transform.localScale = new Vector3(-1, 1, 1);
             rb.AddForce(Vector2.right * -horizontalShipSpeed);
         }
-        if (Input.GetKey(KeyCode.RightArrow))
+        if (Input.GetAxis("Horizontal") > 0)
         {
             hull.transform.localScale = new Vector3(1, 1, 1);
             rb.AddForce(Vector2.right * horizontalShipSpeed);
         }
-        if (Input.GetKey(KeyCode.UpArrow) && jetFuel > 0f)
+        if (Input.GetAxis("Vertical") > 0)
         {
-            jetFuel = Mathf.Clamp(jetFuel - Time.deltaTime, 0, maxJetFuel);
-            rb.AddForce(Vector2.up * verticalShipSpeed);
+            if (jetFuel > 0f)
+            {
+                jetFuel = Mathf.Clamp(jetFuel - Time.deltaTime, 0, maxJetFuel);
+                rb.AddForce(Vector2.up * verticalShipSpeed);
+            }
         }
-        else if(!Input.GetKey(KeyCode.UpArrow))
+        else
         {
             jetFuel = Mathf.Clamp(jetFuel + Time.deltaTime, 0, maxJetFuel);
         }

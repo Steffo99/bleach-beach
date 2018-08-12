@@ -21,17 +21,17 @@ public class Cannon : MonoBehaviour {
 
     private void Update ()
     {
-        Vector2 screenPosition = Camera.main.WorldToScreenPoint(transform.position);
-        Vector2 direction = (Vector2)Input.mousePosition - screenPosition;
-        transform.rotation = Quaternion.LookRotation(Vector3.forward, direction);
-        spriteRenderer.flipX = direction.x < 0;
         if (harpoonAvailable)
         {
-            if (Input.GetKey(KeyCode.Space))
+            Vector2 screenPosition = Camera.main.WorldToScreenPoint(transform.position);
+            Vector2 direction = (Vector2)Input.mousePosition - screenPosition;
+            transform.rotation = Quaternion.LookRotation(Vector3.forward, direction);
+            spriteRenderer.flipX = direction.x < 0;
+            if (Input.GetMouseButton(0))
             {
                 force = Mathf.Clamp(force + forceBuildingSpeed * Time.deltaTime, 0, maxForce);
             }
-            if (Input.GetKeyUp(KeyCode.Space))
+            if (Input.GetMouseButtonUp(0))
             {
                 GameObject harpoonInstance = Instantiate(harpoon);
                 harpoonInstance.transform.position = transform.position + (Vector3)direction.normalized;
