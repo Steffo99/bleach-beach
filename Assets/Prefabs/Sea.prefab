@@ -1786,7 +1786,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   seaTextures: {fileID: 1259758189242624}
-  speed: 0.002
+  speed: 0.004166667
 --- !u!212 &212022742042672606
 SpriteRenderer:
   m_ObjectHideFlags: 1
