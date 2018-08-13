@@ -6,10 +6,10 @@ public class PlayerMovement : MonoBehaviour {
 
     private Rigidbody2D rb;
     public GameObject hull;
-    public float horizontalShipSpeed = 50;
-    public float verticalShipSpeed = 20;
+    public float horizontalShipSpeed = 5f;
+    public float verticalShipSpeed = 30;
     public float maxJetFuel = 2f;
-    public float jetFuelRechargeSpeed = 0.5f;
+    public float jetFuelRechargeSpeed = 0.1f;
     private float jetFuel;
 
     void Start () {

@@ -8,6 +8,7 @@ public class FishAi : MonoBehaviour {
     public float speed = 2f;
     public GameObject hook = null;
     public GameObject sea;
+    public GameObject targetedBy;
     private Vector3 direction;
     private Rigidbody2D rb;
 

@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4347951085211458}
   - component: {fileID: 120926356996093036}
   - component: {fileID: 114113591002818490}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Chain
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40,7 +40,7 @@ GameObject:
   - component: {fileID: 50840653617852040}
   - component: {fileID: 114633804764434460}
   - component: {fileID: 61123955855276598}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Harpoon
   m_TagString: Untagged
   m_Icon: {fileID: 0}

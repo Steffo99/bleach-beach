@@ -19,7 +19,9 @@ public class Cannon : MonoBehaviour {
     {
         hullSpriteRenderer = hull.GetComponent<SpriteRenderer>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+        //Disable enemy and player collisions
         Physics2D.IgnoreLayerCollision(8, 8);
+        Physics2D.IgnoreLayerCollision(9, 9);
     }
 
     private void Update ()
@@ -41,6 +43,7 @@ public class Cannon : MonoBehaviour {
                 harpoonInstance.transform.rotation = transform.rotation;
                 harpoonInstance.GetComponent<Rigidbody2D>().AddForce(direction * force);
                 harpoonInstance.GetComponent<SpriteRenderer>().flipX = spriteRenderer.flipX;
+                harpoonInstance.layer = 8;
                 Linker linker = harpoonInstance.GetComponentInChildren<Linker>();
                 linker.firstObject = gameObject;
                 linker.secondObject = harpoonInstance;
