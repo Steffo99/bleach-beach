@@ -38,7 +38,7 @@ public class FishSpawnerEnding : MonoBehaviour
         }
         if (spawned >= toSpawn)
         {
-            winner.text = vincitore;
+            winner.text = vincitore+" wins!";
         }
     }
 }
