@@ -7,17 +7,18 @@ public class FishCatcher : MonoBehaviour {
     public int fishCaught = 0;
     public Sprite[] fishPileSprites;
     public int[] fishPileStages;
+    public GameObject fishPile;
 
     private SpriteRenderer fishPileRenderer;
 
     private void Start()
     {
-        fishPileRenderer = GetComponent<SpriteRenderer>();
+        fishPileRenderer = fishPile.GetComponent<SpriteRenderer>();
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.tag == "Fish")
+        if (collision.gameObject.tag == "Fish" && collision.gameObject.GetComponent<FishAi>().hook != null)
         {
             fishCaught++;
             Destroy(collision.gameObject);

@@ -33,20 +33,25 @@ public class Harpoon : MonoBehaviour {
             {
                 rb.MoveRotation(-Vector2.Angle(transform.position - linker.firstObject.transform.position, Vector2.right) - 90f);
             }
-            rb.MovePosition(Vector3.MoveTowards(transform.position, linker.firstObject.transform.position, returnSpeed * Time.deltaTime));
-            if(Vector3.Distance(transform.position, linker.firstObject.transform.position) < 0.2f)
+            Cannon cannon = linker.firstObject.GetComponent<Cannon>();
+            if(cannon != null)
             {
-                Cannon cannon = linker.firstObject.GetComponent<Cannon>();
-                if(cannon != null)
+                rb.MovePosition(Vector3.MoveTowards(transform.position, linker.firstObject.transform.parent.position, returnSpeed * Time.deltaTime));
+                if(Physics2D.OverlapPoint(transform.position) == linker.firstObject.transform.parent.GetComponent<Collider2D>())
                 {
                     cannon.harpoonAvailable = true;
+                    Destroy(gameObject);
                 }
-                else
+            }
+            else
+            {
+                rb.MovePosition(Vector3.MoveTowards(transform.position, linker.firstObject.transform.position, returnSpeed * Time.deltaTime));
+                if(Physics2D.OverlapPoint(transform.position) == linker.firstObject.transform.GetComponent<Collider2D>())
                 {
                     EnemyShipAi enemyShipAi = linker.firstObject.GetComponent<EnemyShipAi>();
                     enemyShipAi.harpoonAvailable = true;
+                    Destroy(gameObject);
                 }
-                Destroy(gameObject);
             }
         }
 	}
