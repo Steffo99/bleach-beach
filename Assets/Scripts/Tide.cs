@@ -19,7 +19,7 @@ public class Tide : MonoBehaviour
         if (buoyancyEffector2D.surfaceLevel > 0)
         {
             buoyancyEffector2D.surfaceLevel = buoyancyEffector2D.surfaceLevel - (Time.deltaTime * speed);
-            seaTextures.transform.Translate(Vector3.down * Time.deltaTime * speed * 40);
         }
+        seaTextures.transform.Translate(Vector3.down * Time.deltaTime * speed * 40);
     }
 }

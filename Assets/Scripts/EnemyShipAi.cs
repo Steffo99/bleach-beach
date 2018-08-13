@@ -32,14 +32,22 @@ public class EnemyShipAi : MonoBehaviour {
         //Find a target fish
 		if(target == null || timeSinceLastTarget > timeBeforeChangingTarget)
         {
-            if(target != null)
+            if (target != null)
             {
-                target.GetComponent<FishAi>().targetedBy = null;
+                FishAi fishAi = target.GetComponent<FishAi>();
+                if (fishAi != null)
+                {
+                    fishAi.targetedBy = null;
+                }
             }
             target = FindClosestFish(GameObject.FindGameObjectsWithTag("Fish"));
             if (target != null)
             {
-                target.GetComponent<FishAi>().targetedBy = gameObject;
+                FishAi fishAi = target.GetComponent<FishAi>();
+                if (fishAi != null)
+                {
+                    fishAi.targetedBy = gameObject;
+                }
             }
             timeBeforeChangingTarget = 0f;
         }
@@ -112,11 +120,32 @@ public class EnemyShipAi : MonoBehaviour {
     GameObject FindClosestFish(GameObject[] fish)
     {
         GameObject result = null;
+        float distance;
         float minimumDistance = Mathf.Infinity;
         foreach (GameObject fishInstance in fish)
         {
-            if (fishInstance.GetComponent<FishAi>().targetedBy != null) continue;
-            float distance = Vector3.Distance(fishInstance.transform.position, transform.position);
+            if(fishInstance == null)
+            {
+                break;
+            }
+            FishCatcher fishCatcher = fishInstance.GetComponentInParent<FishCatcher>();
+            if (fishCatcher != null && fishCatcher.fishCaught > 0)
+            {
+                if (fishCatcher.gameObject.layer == 9)
+                {
+                    distance = Mathf.Infinity;
+                }
+                else
+                {
+                    distance = Vector3.Distance(fishInstance.transform.position, transform.position) + 1f;
+                }
+            }
+            else
+            {
+                FishAi fishAi = fishInstance.GetComponent<FishAi>();
+                if (fishAi != null && fishAi.targetedBy != null) continue;
+                distance = Vector3.Distance(fishInstance.transform.position, transform.position);
+            }
             if (distance < minimumDistance)
             {
                 minimumDistance = distance;

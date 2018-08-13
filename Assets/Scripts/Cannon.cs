@@ -12,12 +12,10 @@ public class Cannon : MonoBehaviour {
     public float startingForce = 1f;
     private float force = 1f;
 
-    private SpriteRenderer hullSpriteRenderer;
     private SpriteRenderer spriteRenderer;
 
     private void Start()
     {
-        hullSpriteRenderer = hull.GetComponent<SpriteRenderer>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         //Disable enemy and player collisions
         Physics2D.IgnoreLayerCollision(8, 8);

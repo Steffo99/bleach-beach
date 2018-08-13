@@ -56,6 +56,10 @@ public class Harpoon : MonoBehaviour {
         if (going)
         {
             going = false;
+            if(rb == null)
+            {
+                rb = GetComponent<Rigidbody2D>();
+            }
             rb.bodyType = RigidbodyType2D.Kinematic;
         }
         if (collision.gameObject.tag == "Fish")
