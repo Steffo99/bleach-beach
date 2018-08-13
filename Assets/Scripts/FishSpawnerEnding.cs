@@ -11,14 +11,17 @@ public class FishSpawnerEnding : MonoBehaviour
     public GameObject fish;
     public GameObject sea;
     public Text punteggio;
+    public Text winner;
     private float timeToSpawn;
     private int toSpawn;
     private int spawned = 0;
+    private string vincitore = "";
 
     void Start()
     {
         timeToSpawn = Random.Range(spawnTime - randomFactor, spawnTime + randomFactor);
         toSpawn = PlayerPrefs.GetInt("player_score");
+        vincitore = PlayerPrefs.GetString("winner");
     }
 
     void Update()
@@ -32,6 +35,10 @@ public class FishSpawnerEnding : MonoBehaviour
             timeToSpawn = Random.Range(spawnTime - randomFactor, spawnTime + randomFactor);
             spawned++;
             punteggio.text = spawned.ToString();
+        }
+        if (spawned >= toSpawn)
+        {
+            winner.text = vincitore;
         }
     }
 }

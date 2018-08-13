@@ -8,6 +8,9 @@ public class Countdown : MonoBehaviour {
     
     public float startingTime = 500f;
     public GameObject script;
+    public GameObject nave1;
+    public GameObject nave2;
+    public GameObject nave3;
     private float currentTime = 500f;
     private Text timerText;
 
@@ -27,11 +30,26 @@ public class Countdown : MonoBehaviour {
 
     void TheEnd()
     {
-        FishCatcher presi;
+        FishCatcher presi, ai1, ai2, ai3;
         presi = script.GetComponent<FishCatcher>();
+        ai1 = nave1.GetComponent<FishCatcher>();
+        ai2 = nave2.GetComponent<FishCatcher>();
+        ai3 = nave3.GetComponent<FishCatcher>();
+        int[] punteggi = { ai1.fishCaught, ai2.fishCaught, ai3.fishCaught};
+        int punteggio = 0;
+        string vincitore = "Player";
+        foreach ( int punteggioai in punteggi)
+        {
+            if(punteggioai > punteggio)
+            {
+                vincitore = "A.I.";
+            }
+        }
         int score = presi.fishCaught;
         Debug.Log(score);
+        Debug.Log(vincitore);
         PlayerPrefs.SetInt("player_score", score);
+        PlayerPrefs.SetString("winner", vincitore);
         SceneManager.LoadSceneAsync("Results", LoadSceneMode.Single);
     }
 }
