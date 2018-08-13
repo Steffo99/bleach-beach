@@ -35,6 +35,10 @@ public class FishAi : MonoBehaviour {
         {
             rb.MovePosition(hook.transform.position);
         }
+        if(Physics2D.OverlapPoint(transform.position) != GetComponent<Collider2D>())
+        {
+            ChangeDirection();
+        }
     }
 
     void OnCollisionEnter2D(Collision2D collision)

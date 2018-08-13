@@ -49,7 +49,7 @@ public class EnemyShipAi : MonoBehaviour {
                     fishAi.targetedBy = gameObject;
                 }
             }
-            timeBeforeChangingTarget = 0f;
+            timeSinceLastTarget = 0f;
         }
     }
 

@@ -41,7 +41,7 @@ public class FishCatcher : MonoBehaviour {
             {
                 break;
             }
-            if (fishCaught > fishPileStages[currentStage])
+            if (fishCaught >= fishPileStages[currentStage])
             {
                 currentStage++;
             }
