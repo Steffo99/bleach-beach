@@ -18,9 +18,10 @@ public class FishCatcher : MonoBehaviour {
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Fish" && collision.gameObject.GetComponent<FishAi>().hook != null)
+        FishAi fishAi = collision.gameObject.GetComponent<FishAi>();
+        if (collision.gameObject.tag == "Fish" && fishAi.hook != null)
         {
-            fishCaught++;
+            fishCaught += fishAi.value;
             Destroy(collision.gameObject);
             CheckStages();
         }
@@ -41,7 +42,7 @@ public class FishCatcher : MonoBehaviour {
             {
                 break;
             }
-            if (fishCaught > fishPileStages[currentStage])
+            if (fishCaught >= fishPileStages[currentStage])
             {
                 currentStage++;
             }

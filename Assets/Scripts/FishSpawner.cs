@@ -21,7 +21,7 @@ public class FishSpawner : MonoBehaviour {
             GameObject newFish = Instantiate(fish);
             newFish.transform.position = transform.position;
             newFish.GetComponent<FishAi>().sea = sea;
-            timeToSpawn = Random.Range(spawnTime - randomFactor, spawnTime + randomFactor);
+            timeToSpawn = Random.Range(spawnTime, spawnTime + randomFactor);
         }
         if(transform.position.y > sea.transform.position.y)
         {

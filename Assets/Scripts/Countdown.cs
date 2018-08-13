@@ -42,7 +42,7 @@ public class Countdown : MonoBehaviour {
         {
             if(punteggi[a] > score)
             {
-                vincitore = "A.I.";
+                vincitore = "AI";
             }
         } 
         Debug.Log(score);

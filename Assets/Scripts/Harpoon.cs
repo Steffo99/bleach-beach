@@ -5,6 +5,7 @@ using UnityEngine;
 public class Harpoon : MonoBehaviour {
 
     public float returnSpeed = 5f;
+    public GameObject fish;
 
     private Rigidbody2D rb;
     private bool going = true;
@@ -39,8 +40,7 @@ public class Harpoon : MonoBehaviour {
                 rb.MovePosition(Vector3.MoveTowards(transform.position, linker.firstObject.transform.parent.position, returnSpeed * Time.deltaTime));
                 if(Physics2D.OverlapPoint(transform.position) == linker.firstObject.transform.parent.GetComponent<Collider2D>())
                 {
-                    cannon.harpoonAvailable = true;
-                    Destroy(gameObject);
+                    Invoke("SelfDestruct", 0.1f);
                 }
             }
             else
@@ -48,9 +48,7 @@ public class Harpoon : MonoBehaviour {
                 rb.MovePosition(Vector3.MoveTowards(transform.position, linker.firstObject.transform.position, returnSpeed * Time.deltaTime));
                 if(Physics2D.OverlapPoint(transform.position) == linker.firstObject.transform.GetComponent<Collider2D>())
                 {
-                    EnemyShipAi enemyShipAi = linker.firstObject.GetComponent<EnemyShipAi>();
-                    enemyShipAi.harpoonAvailable = true;
-                    Destroy(gameObject);
+                    Invoke("SelfDestruct", 0.1f);
                 }
             }
         }
@@ -69,8 +67,41 @@ public class Harpoon : MonoBehaviour {
         }
         if (collision.gameObject.tag == "Fish")
         {
-            collision.gameObject.GetComponent<FishAi>().hook = gameObject;
+            FishAi fishAi = collision.gameObject.GetComponent<FishAi>();
+            fishAi.hook = gameObject;
         }
+    }
 
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        FishCatcher fc = other.gameObject.GetComponentInParent<FishCatcher>();
+        if (fc != null && fc.fishCaught > 0 && other.gameObject.layer != gameObject.layer)
+        {
+            fc.LoseFish();
+            Invoke("SpawnCaughtFish", 0.1f);
+        }
+    }
+
+    void SelfDestruct()
+    {
+        Cannon cannon = linker.firstObject.GetComponent<Cannon>();
+        if(cannon != null)
+        {
+            cannon.harpoonAvailable = true;
+        }
+        else
+        {
+            EnemyShipAi enemyShipAi = linker.firstObject.GetComponent<EnemyShipAi>();
+            enemyShipAi.harpoonAvailable = true;
+        }
+        Destroy(gameObject);
+    }
+
+    void SpawnCaughtFish()
+    {
+        GameObject newFish = Instantiate(fish);
+        newFish.transform.position = transform.position;
+        newFish.GetComponent<FishAi>().sea = GameObject.FindGameObjectWithTag("SeaTextures");
+        newFish.GetComponent<FishAi>().hook = gameObject;
     }
 }
