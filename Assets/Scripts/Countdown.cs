@@ -36,18 +36,20 @@ public class Countdown : MonoBehaviour {
         ai2 = nave2.GetComponent<FishCatcher>();
         ai3 = nave3.GetComponent<FishCatcher>();
         int[] punteggi = { ai1.fishCaught, ai2.fishCaught, ai3.fishCaught};
-        int punteggio = 0;
+        int score = presi.fishCaught;
         string vincitore = "Player";
-        foreach ( int punteggioai in punteggi)
+        for(int a = 0; a < 3; a++)
         {
-            if(punteggioai > punteggio)
+            if(punteggi[a] > score)
             {
                 vincitore = "A.I.";
             }
-        }
-        int score = presi.fishCaught;
+        } 
         Debug.Log(score);
         Debug.Log(vincitore);
+        Debug.Log(punteggi[0]);
+        Debug.Log(punteggi[1]);
+        Debug.Log(punteggi[2]);
         PlayerPrefs.SetInt("player_score", score);
         PlayerPrefs.SetString("winner", vincitore);
         SceneManager.LoadSceneAsync("Results", LoadSceneMode.Single);
