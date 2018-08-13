@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Countdown : MonoBehaviour {
     
@@ -31,5 +32,6 @@ public class Countdown : MonoBehaviour {
         int score = presi.fishCaught;
         Debug.Log(score);
         PlayerPrefs.SetInt("player_score", score);
+        SceneManager.LoadSceneAsync("Results", LoadSceneMode.Single);
     }
 }
