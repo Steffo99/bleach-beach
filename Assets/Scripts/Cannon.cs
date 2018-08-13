@@ -20,6 +20,8 @@ public class Cannon : MonoBehaviour {
         //Disable enemy and player collisions
         Physics2D.IgnoreLayerCollision(8, 8);
         Physics2D.IgnoreLayerCollision(9, 9);
+        Physics2D.IgnoreLayerCollision(8, 10);
+        Physics2D.IgnoreLayerCollision(9, 10);
     }
 
     private void Update ()

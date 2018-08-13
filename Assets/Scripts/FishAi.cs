@@ -6,6 +6,7 @@ public class FishAi : MonoBehaviour {
 
     public float timeBetweenDirectionChanges = 1f;
     public float speed = 2f;
+    public int value = 1;
     public GameObject hook = null;
     public GameObject sea;
     public GameObject targetedBy;

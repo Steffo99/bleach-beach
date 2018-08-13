@@ -34,11 +34,18 @@ public class FishSpawnerEnding : MonoBehaviour
             newFish.GetComponent<FishAi>().sea = sea;
             timeToSpawn = Random.Range(spawnTime - randomFactor, spawnTime + randomFactor);
             spawned++;
-            punteggio.text = spawned.ToString();
+            punteggio.text = spawned.ToString() + " fish";
         }
         if (spawned >= toSpawn)
         {
-            winner.text = vincitore+" wins!";
+            if(vincitore == "Player")
+            {
+                winner.text = "You win!";
+            }
+            else if(vincitore == "AI")
+            {
+                winner.text = "The bots win!";
+            }
         }
     }
 }

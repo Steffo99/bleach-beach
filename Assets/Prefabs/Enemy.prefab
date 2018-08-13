@@ -55,7 +55,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1195403025493360}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -82.64991, y: -29.3563, z: 0.40207273}
+  m_LocalPosition: {x: -88.68, y: -30.76, z: 0.40207273}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4636126680252624}
@@ -194,7 +194,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maximumDistanceFromFish: 1
   timeBeforeChangingTarget: 5
-  horizontalSpeed: 5
+  horizontalSpeed: 4
   verticalSpeed: 17
   shootForce: 5
   harpoon: {fileID: 1737609814504882, guid: 288f16ae5eaa16440b89da431723b1c2, type: 2}

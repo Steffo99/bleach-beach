@@ -9,19 +9,19 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1365020258240812}
+  m_RootGameObject: {fileID: 1360003442690508}
   m_IsPrefabAsset: 1
---- !u!1 &1365020258240812
+--- !u!1 &1360003442690508
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 224434015513733384}
-  - component: {fileID: 222494154202823632}
-  - component: {fileID: 114654271599845820}
-  - component: {fileID: 114128334027664462}
+  - component: {fileID: 224482254420098404}
+  - component: {fileID: 222045099866073808}
+  - component: {fileID: 114296788321880674}
+  - component: {fileID: 114688263243653950}
   m_Layer: 5
   m_Name: Time left
   m_TagString: Untagged
@@ -29,28 +29,12 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &114128334027664462
+--- !u!114 &114296788321880674
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1365020258240812}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 80f6e912b74c1744d83aedb0e365fa93, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  startingTime: 240
-  script: {fileID: 0}
-  nave1: {fileID: 0}
-  nave2: {fileID: 0}
-  nave3: {fileID: 0}
---- !u!114 &114654271599845820
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1365020258240812}
+  m_GameObject: {fileID: 1360003442690508}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
@@ -78,19 +62,35 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: X:XX
---- !u!222 &222494154202823632
+--- !u!114 &114688263243653950
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1360003442690508}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80f6e912b74c1744d83aedb0e365fa93, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startingTime: 240
+  script: {fileID: 0}
+  nave1: {fileID: 0}
+  nave2: {fileID: 0}
+  nave3: {fileID: 0}
+--- !u!222 &222045099866073808
 CanvasRenderer:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1365020258240812}
+  m_GameObject: {fileID: 1360003442690508}
   m_CullTransparentMesh: 0
---- !u!224 &224434015513733384
+--- !u!224 &224482254420098404
 RectTransform:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1365020258240812}
+  m_GameObject: {fileID: 1360003442690508}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.15, y: 0.15, z: 0.15}
