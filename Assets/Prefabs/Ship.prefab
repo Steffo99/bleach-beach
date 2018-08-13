@@ -48,7 +48,7 @@ GameObject:
   m_IsActive: 1
 --- !u!1 &1707044546218068
 GameObject:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 6
@@ -90,7 +90,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4419769467158982}
-  - {fileID: 4811992088834386}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -104,6 +103,7 @@ Transform:
   m_LocalPosition: {x: 0.245, y: -0.382, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 4811992088834386}
   - {fileID: 4881997913105036}
   m_Father: {fileID: 4279439219186522}
   m_RootOrder: 0
@@ -114,12 +114,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1707044546218068}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.6742, y: 0.0142, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.1, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.91920006, y: 0.3961983, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 4279439219186522}
-  m_RootOrder: 1
+  m_Father: {fileID: 4419769467158982}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4881997913105036
 Transform:
@@ -132,7 +132,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4419769467158982}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &50107883579770240
 Rigidbody2D:
@@ -195,8 +195,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fishCaught: 0
   fishPileSprites:
-  - {fileID: 21300000, guid: be5eaf9abd3481b489d582a8f1a41508, type: 3}
-  fishPileStages: 
+  - {fileID: 0}
+  - {fileID: 21300000, guid: 1ca1321049c586e4f86c43b461c53210, type: 3}
+  - {fileID: 21300000, guid: 5357d76bfe87f37489c252197d6548f3, type: 3}
+  - {fileID: 21300000, guid: 72d0711964923ee469e38d13424858f8, type: 3}
+  - {fileID: 21300000, guid: 082fbe21a6557cd4a866620a4586293b, type: 3}
+  - {fileID: 21300000, guid: 69cfde8a6e90b4e4f875f925ecdf4ead, type: 3}
+  - {fileID: 21300000, guid: ab4f5ce491a45fa4ba43f2e031b26bd1, type: 3}
+  - {fileID: 21300000, guid: 2749b8097b8dea44b91b5119d5cfd775, type: 3}
+  fishPileStages: 01000000020000000300000004000000050000000600000007000000
   fishPile: {fileID: 1707044546218068}
 --- !u!114 &114893472868460232
 MonoBehaviour:
@@ -312,15 +319,15 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: be5eaf9abd3481b489d582a8f1a41508, type: 3}
-  m_Color: {r: 0, g: 0.98189926, b: 1, a: 1}
+  m_Sprite: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!212 &212928515413584804

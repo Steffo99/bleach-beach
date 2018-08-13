@@ -24,11 +24,11 @@ public class EnemyShipAi : MonoBehaviour {
 	void Start () {
         rb = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
-        jetFuel = maxJetFuel;
+        jetFuel = 0f;
 	}
 	
 	void Update () {
-        timeBeforeChangingTarget += Time.deltaTime;
+        timeSinceLastTarget += Time.deltaTime;
         //Find a target fish
 		if(target == null || timeSinceLastTarget > timeBeforeChangingTarget)
         {
@@ -72,7 +72,7 @@ public class EnemyShipAi : MonoBehaviour {
                 harpoonInstance.transform.position = transform.position + direction;
                 harpoonInstance.transform.rotation = transform.rotation;
                 harpoonInstance.GetComponent<Rigidbody2D>().AddForce(direction * shootForce);
-                harpoonInstance.GetComponent<SpriteRenderer>().flipX = spriteRenderer.flipX;
+                harpoonInstance.GetComponent<SpriteRenderer>().flipX = transform.localScale.x < 0;
                 harpoonInstance.layer = 9;
                 Linker linker = harpoonInstance.GetComponentInChildren<Linker>();
                 linker.firstObject = gameObject;
@@ -86,13 +86,14 @@ public class EnemyShipAi : MonoBehaviour {
                 if (transform.position.x - target.transform.position.x < 0f)
                 {
                     rb.AddForce(Vector2.right * horizontalSpeed * power);
-                    spriteRenderer.flipX = true;
+                    transform.localScale = new Vector3(-1f, 1f, 1f);
                 }
                 //Left
                 else
                 {
                     rb.AddForce(Vector2.right * -horizontalSpeed * power);
                     spriteRenderer.flipX = false;
+                    transform.localScale = new Vector3(-1f, 1f, 1f);
                 }
                 //Enable the jetpack
                 if(jetFuel == maxJetFuel)

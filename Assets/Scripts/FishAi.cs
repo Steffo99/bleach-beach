@@ -19,7 +19,7 @@ public class FishAi : MonoBehaviour {
 
     void ChangeDirection()
     {
-        direction = new Vector3(Random.Range(-1f, 1f), Random.Range(-1f, 1f));
+        direction = new Vector3(Random.Range(-1f, 1f), Random.Range(-1f, 0.4f));
     }
 	
 	void Update () {
