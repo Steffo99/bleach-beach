@@ -2,11 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Countdown : MonoBehaviour {
     
     public float startingTime = 500f;
-
+    public GameObject script;
     private float currentTime = 500f;
     private Text timerText;
 
@@ -26,6 +27,11 @@ public class Countdown : MonoBehaviour {
 
     void TheEnd()
     {
-        //Do something
+        FishCatcher presi;
+        presi = script.GetComponent<FishCatcher>();
+        int score = presi.fishCaught;
+        Debug.Log(score);
+        PlayerPrefs.SetInt("player_score", score);
+        SceneManager.LoadSceneAsync("Results", LoadSceneMode.Single);
     }
 }

@@ -258,6 +258,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startingTime: 240
+  script: {fileID: 1410052124}
 --- !u!114 &189120858
 MonoBehaviour:
   m_ObjectHideFlags: 0
