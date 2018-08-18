@@ -7,7 +7,7 @@ public class FollowGameObject : MonoBehaviour {
     public GameObject target;
     public Vector2 limitFirstCorner;
     public Vector2 limitSecondCorner;
-    
+
     void Update () {
         if (target != null)
         {

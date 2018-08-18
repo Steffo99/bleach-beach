@@ -13,7 +13,9 @@ public class FishCatcher : MonoBehaviour {
 
     private void Start()
     {
+        fishPile = transform.Find("Fish Pile").gameObject;
         fishPileRenderer = fishPile.GetComponent<SpriteRenderer>();
+        Camera.main.GetComponent<FollowGameObject>().target = gameObject;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

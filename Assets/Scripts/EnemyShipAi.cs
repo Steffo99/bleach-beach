@@ -130,16 +130,14 @@ public class EnemyShipAi : MonoBehaviour {
                 break;
             }
             FishCatcher fishCatcher = fishInstance.GetComponentInParent<FishCatcher>();
-            if (fishCatcher != null && fishCatcher.fishCaught > 0)
+            
+            if (fishCatcher != null)
             {
-                if (fishCatcher.gameObject.layer == 9)
+                if (fishCatcher.gameObject.layer == 9 || fishCatcher.fishCaught > 0)
                 {
-                    distance = Mathf.Infinity;
+                    continue;
                 }
-                else
-                {
-                    distance = Vector3.Distance(fishInstance.transform.position, transform.position) + 1f;
-                }
+                distance = Vector3.Distance(fishInstance.transform.position, transform.position) + 1f;
             }
             else
             {
