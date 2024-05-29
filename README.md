@@ -1,6 +1,6 @@
 <div align="center">
 
-![](.media/icon-192x192-round.png)
+![](.media/icon-192x192_round.png)
 
 # Bleach Beach
 
